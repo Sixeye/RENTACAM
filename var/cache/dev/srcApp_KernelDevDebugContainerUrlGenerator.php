@@ -33,6 +33,10 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/index']], [], []],
+        'cameraalouer' => [[], ['_controller' => 'App\\Controller\\IndexController::cameraalouer'], [], [['text', '/cameraalouer']], [], []],
+        'lesloueurs' => [[], ['_controller' => 'App\\Controller\\IndexController::lesloueurs'], [], [['text', '/lesloueurs']], [], []],
+        'mettreunecameralocation' => [[], ['_controller' => 'App\\Controller\\IndexController::mettreunecameralocation'], [], [['text', '/mettreunecameralocation']], [], []],
+        'modifieruneannonce' => [[], ['_controller' => 'App\\Controller\\IndexController::modifieruneannonce'], [], [['text', '/modifieruneannonce']], [], []],
     ];
         }
     }

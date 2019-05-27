@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Caméras disponibles{% endblock %}
+
+{% block body %}
+    <div id="home">
+        <div class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md sticker" style="padding-top:30px;">
+                <div class="container"><a class="navbar-brand" style="font-size:24px;" href="#">RENTACAM</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                            class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('index') }}" target="_top">Bienvenue</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('cameraalouer') }}">Caméras à louer</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('lesloueurs') }}">Les loueurs</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('mettreunecameralocation') }}">Mettre une caméra en location </a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('modifieruneannonce') }}">Modifier une annonce</a></li>
+                            <li class="nav-item" role="presentation"></li>
+                            <li class="nav-item" role="presentation"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">METTRE UNE CAMERA EN LOCATION</h2>
+                <p class="text-center">Remplissez le formulaire</p>
+                <div class="form-group">
+                    <form><input class="form-control" type="text" placeholder="Votre nom"><input class="form-control" type="text" placeholder="Votre prénom"><input class="form-control" type="text" placeholder="Votre titre"><input class="form-control" type="email"
+                                                                                                                                                                                                                                      placeholder="Votre email"><input class="form-control" type="tel" placeholder="Votre téléphone"><input class="form-control" type="text" placeholder="Votre caméra"><input class="form-control" type="number" placeholder="Votre tarif / jour"><button class="btn btn-secondary" type="button">Valider</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Collaborer avec nous</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Se connecter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>A propos</h3>
+                        <ul>
+                            <li><a href="#">La société</a></li>
+                            <li><a href="#">La team</a></li>
+                            <li><a href="#">Nous rejoindre</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>RENTACAM</h3>
+                        <p>Service de mise en relation de particuliers pour des fins de location de matériel cinématographique avec assurance.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">RENTACAM © 2019</p>
+            </div>
+        </footer>
+    </div>
+{% endblock %}

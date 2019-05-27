@@ -88,11 +88,26 @@ class __TwigTemplate_1e885223d0c6a7b6c9db21facaa6e835527d48ba8ce6a2e060f7614f79d
                     <div
                             class=\"collapse navbar-collapse\" id=\"navcol-1\">
                         <ul class=\"nav navbar-nav ml-auto\">
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"index.html\" target=\"_top\">Bienvenue</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"cameraalouer.html\">Caméras à louer</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"lesloueurs.html\">Les loueurs</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"mettreunecameralocation.html\">Mettre une caméra en location </a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"modifieruneannonce.html\">Modifier une annonce</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "\" target=\"_top\">Bienvenue</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cameraalouer");
+        echo "\">Caméras à louer</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("lesloueurs");
+        echo "\">Les loueurs</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mettreunecameralocation");
+        echo "\">Mettre une caméra en location </a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("modifieruneannonce");
+        echo "\">Modifier une annonce</a></li>
                             <li class=\"nav-item\" role=\"presentation\"></li>
                             <li class=\"nav-item\" role=\"presentation\"></li>
                         </ul>
@@ -166,7 +181,7 @@ class __TwigTemplate_1e885223d0c6a7b6c9db21facaa6e835527d48ba8ce6a2e060f7614f79d
 
     public function getDebugInfo()
     {
-        return array (  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
+        return array (  109 => 17,  105 => 16,  101 => 15,  97 => 14,  93 => 13,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -183,11 +198,11 @@ class __TwigTemplate_1e885223d0c6a7b6c9db21facaa6e835527d48ba8ce6a2e060f7614f79d
                     <div
                             class=\"collapse navbar-collapse\" id=\"navcol-1\">
                         <ul class=\"nav navbar-nav ml-auto\">
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"index.html\" target=\"_top\">Bienvenue</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"cameraalouer.html\">Caméras à louer</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"lesloueurs.html\">Les loueurs</a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"mettreunecameralocation.html\">Mettre une caméra en location </a></li>
-                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"modifieruneannonce.html\">Modifier une annonce</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"{{ path('index') }}\" target=\"_top\">Bienvenue</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"{{ path('cameraalouer') }}\">Caméras à louer</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"{{ path('lesloueurs') }}\">Les loueurs</a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"{{ path('mettreunecameralocation') }}\">Mettre une caméra en location </a></li>
+                            <li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"{{ path('modifieruneannonce') }}\">Modifier une annonce</a></li>
                             <li class=\"nav-item\" role=\"presentation\"></li>
                             <li class=\"nav-item\" role=\"presentation\"></li>
                         </ul>

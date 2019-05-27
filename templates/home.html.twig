@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Caméras disponibles{% endblock %}
+{% block title %}Bienvenue!{% endblock %}
 
 {% block body %}
     <div id="home">
@@ -10,7 +10,7 @@
                     <div
                             class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('index') }}" target="_top">Bienvenue</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('home') }}" target="_top">Bienvenue</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('cameraalouer') }}">Caméras à louer</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('lesloueurs') }}">Les loueurs</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('mettreunecameralocation') }}">Mettre une caméra en location </a></li>
@@ -21,17 +21,17 @@
                     </div>
                 </div>
             </nav>
-        </div>
-    </div>
-    <div class="features-boxed">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">MODIFIER UNE ANNONCE</h2>
-                <p class="text-center">Modifiez votre annonce</p>
-                <div class="form-group">
-                    <form><input class="form-control" type="number" placeholder="Quel est le numéro de votre annonce?"><button class="btn btn-secondary" type="button">Valider</button><input class="form-control" type="text" placeholder="nom"><input class="form-control" type="text"
-                                                                                                                                                                                                                                                        placeholder="prénom"><input class="form-control" type="text" placeholder="titre"><input class="form-control" type="email" placeholder="email"><input class="form-control" type="tel" placeholder="téléphone"><input class="form-control"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            type="text" placeholder="caméra"><input class="form-control" type="number" placeholder="tarif / jour"><button class="btn btn-secondary" type="button">Valider</button></form>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-6 offset-xl-1" style="margin-left:44px;">
+                        <h1 style="margin-top:204px;">La révolution de vos tournages</h1>
+                        <p>Vous allez pouvoir louer la caméra de votre choix à un particulier avec entre vous un contrat d'assurance.</p><button class="btn btn-light btn-lg action-button" style="padding-right:20px;padding-left:20px;padding-bottom:6px;padding-top:6px;font-size:16px;"
+                                                                                                                                                 hover="background: #fff; color: #333;" type="button">En savoir plus</button></div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder"><img src="/img/VIPER_THOMSON.png">
+                        <div class="iphone-mockup">
+                            <div class="screen"><img style="width:261px;" src="/img/VIPER_THOMSON.png"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
