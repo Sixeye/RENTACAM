@@ -2,19 +2,25 @@
 
 namespace App\Controller;
 
+use App\Form\CameraType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class IndexController
+ * @package App\Controller
+ */
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
-    public function index()
+    public function home()
     {
-        return $this->render('index.html.twig', [
-            'controller_name' => 'IndexController',
-        ]);
+        return $this->render('home.html.twig');
     }
 
     /**
@@ -22,9 +28,7 @@ class IndexController extends AbstractController
      */
     public function cameraalouer()
     {
-        return $this->render('camera_a_louer.html.twig', [
-            'controller_name' => 'CameraALouerController',
-        ]);
+        return $this->render('camera_a_louer.html.twig');
     }
 
     /**
@@ -32,18 +36,17 @@ class IndexController extends AbstractController
      */
     public function lesloueurs()
     {
-        return $this->render('les_loueurs.html.twig', [
-            'controller_name' => 'LesLoueursController',
-        ]);
+        return $this->render('les_loueurs.html.twig');
     }
 
     /**
      * @Route("/mettreunecameralocation", name="mettreunecameralocation")
      */
-    public function mettreunecameralocation()
+    public function mettreunecameralocation(EntityManagerInterface $manager)
     {
+        $form = $this->createForm(CameraType::class);
         return $this->render('mettreunecameralocation.html.twig', [
-            'controller_name' => 'MettreUneCameraLocationController',
+            'form' => $form->createView(),
         ]);
     }
 

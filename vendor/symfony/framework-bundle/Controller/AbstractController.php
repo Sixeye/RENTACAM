@@ -12,6 +12,7 @@
 namespace Symfony\Bundle\FrameworkBundle\Controller;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Mapping as ORM;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
@@ -40,6 +41,7 @@ abstract class AbstractController implements ServiceSubscriberInterface
 
     /**
      * @var ContainerInterface
+     * @ORM\Column(type="string")
      */
     protected $container;
 

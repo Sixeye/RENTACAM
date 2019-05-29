@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Caméras disponibles{% endblock %}
+{% block title %}Créer une annonce{% endblock %}
 
 {% block body %}
     <div id="home">
@@ -10,7 +10,7 @@
                     <div
                             class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('index') }}" target="_top">Bienvenue</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('home') }}" target="_top">Bienvenue</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('cameraalouer') }}">Caméras à louer</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('lesloueurs') }}">Les loueurs</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('mettreunecameralocation') }}">Mettre une caméra en location </a></li>
@@ -29,8 +29,17 @@
                 <h2 class="text-center">METTRE UNE CAMERA EN LOCATION</h2>
                 <p class="text-center">Remplissez le formulaire</p>
                 <div class="form-group">
-                    <form><input class="form-control" type="text" placeholder="Votre nom"><input class="form-control" type="text" placeholder="Votre prénom"><input class="form-control" type="text" placeholder="Votre titre"><input class="form-control" type="email"
-                                                                                                                                                                                                                                      placeholder="Votre email"><input class="form-control" type="tel" placeholder="Votre téléphone"><input class="form-control" type="text" placeholder="Votre caméra"><input class="form-control" type="number" placeholder="Votre tarif / jour"><button class="btn btn-secondary" type="button">Valider</button></form>
+                    {{ form_start(form) }}
+                    {{ form_widget(form.OwnerFirstname) }}
+                    {{ form_widget(form.OwnerName) }}
+                    {{ form_widget(form.OwnerJob) }}
+                    {{ form_widget(form.Email) }}
+                    {{ form_widget(form.Telephone) }}
+                    {{ form_widget(form.Brand) }}
+                    {{ form_widget(form.Prix) }}
+                        <button class="btn btn-secondary" type="button">Valider</button>
+                    {{ form_end(form) }}
+
                 </div>
             </div>
         </div>

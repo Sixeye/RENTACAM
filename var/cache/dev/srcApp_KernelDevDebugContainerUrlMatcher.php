@@ -20,7 +20,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-            '/index' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
+            '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\IndexController::home'], null, null, null, false, false, null]],
             '/cameraalouer' => [[['_route' => 'cameraalouer', '_controller' => 'App\\Controller\\IndexController::cameraalouer'], null, null, null, false, false, null]],
             '/lesloueurs' => [[['_route' => 'lesloueurs', '_controller' => 'App\\Controller\\IndexController::lesloueurs'], null, null, null, false, false, null]],
             '/mettreunecameralocation' => [[['_route' => 'mettreunecameralocation', '_controller' => 'App\\Controller\\IndexController::mettreunecameralocation'], null, null, null, false, false, null]],
