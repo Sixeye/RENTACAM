@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\CameraType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -42,9 +43,22 @@ class IndexController extends AbstractController
     /**
      * @Route("/mettreunecameralocation", name="mettreunecameralocation")
      */
-    public function mettreunecameralocation(EntityManagerInterface $manager)
+    public function mettreunecameralocation(EntityManagerInterface $manager, Request $request)
     {
         $form = $this->createForm(CameraType::class);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $camera = $form->getData();
+            $manager->persist($camera);
+            $manager->flush();
+            $this->addFlash(
+                'notice',
+                'Votre annonce a été ajoutée.'
+            );
+            return $this->redirectToRoute('home');
+        }
+
         return $this->render('mettreunecameralocation.html.twig', [
             'form' => $form->createView(),
         ]);

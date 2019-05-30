@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Camera;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -24,6 +25,7 @@ class CameraType extends AbstractType
             ->add('Telephone', TelType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Téléphone']])
             ->add('Brand', TextType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Caméra']])
             ->add('Prix', IntegerType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Tarif / Jour']])
+            ->add('ajouter', SubmitType::class, ['attr' => ['class'=>'btn btn-secondary', 'type' => 'button']])
         ;
     }
 

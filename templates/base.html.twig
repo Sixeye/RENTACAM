@@ -17,9 +17,18 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
 
+        {% block flash_messages %}
+            {% for message in app.flashes('notice') %}
+            <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+                {{ message }}
+            </div>
+            {% endfor %}
         {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
         {% block javascripts %}
             <script src="/js/jquery.min.js"></script>
             <script src="/bootstrap/js/bootstrap.min.js"></script>

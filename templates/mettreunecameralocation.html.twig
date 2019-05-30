@@ -30,14 +30,20 @@
                 <p class="text-center">Remplissez le formulaire</p>
                 <div class="form-group">
                     {{ form_start(form) }}
+                    {{ form_errors(form.OwnerFirstname) }}
                     {{ form_widget(form.OwnerFirstname) }}
+                    {{ form_errors(form.OwnerName) }}
                     {{ form_widget(form.OwnerName) }}
+                    {{ form_errors(form.OwnerJob) }}
                     {{ form_widget(form.OwnerJob) }}
+                    {{ form_errors(form.Email) }}
                     {{ form_widget(form.Email) }}
+                    {{ form_errors(form.Telephone) }}
                     {{ form_widget(form.Telephone) }}
+                    {{ form_errors(form.Brand) }}
                     {{ form_widget(form.Brand) }}
+                    {{ form_errors(form.Prix) }}
                     {{ form_widget(form.Prix) }}
-                        <button class="btn btn-secondary" type="button">Valider</button>
                     {{ form_end(form) }}
 
                 </div>
