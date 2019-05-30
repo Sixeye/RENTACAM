@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Camera;
 use App\Form\CameraType;
+use App\Repository\CameraRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,9 +29,12 @@ class IndexController extends AbstractController
     /**
      * @Route("/cameraalouer", name="cameraalouer")
      */
-    public function cameraalouer()
+    public function cameraalouer(CameraRepository $cameraRepository)
     {
-        return $this->render('camera_a_louer.html.twig');
+        $cameras = $cameraRepository->findAll();
+        return $this->render('camera_a_louer.html.twig',[
+            'cameras' => $cameras
+        ]);
     }
 
     /**
