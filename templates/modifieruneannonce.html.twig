@@ -14,7 +14,6 @@
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('cameraalouer') }}">Caméras à louer</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('lesloueurs') }}">Les loueurs</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('mettreunecameralocation') }}">Mettre une caméra en location </a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link active" href="{{ path('modifieruneannonce') }}">Modifier une annonce</a></li>
                             <li class="nav-item" role="presentation"></li>
                             <li class="nav-item" role="presentation"></li>
                         </ul>
@@ -29,9 +28,7 @@
                 <h2 class="text-center">MODIFIER UNE ANNONCE</h2>
                 <p class="text-center">Modifiez votre annonce</p>
                 <div class="form-group">
-                    <form><input class="form-control" type="number" placeholder="Quel est le numéro de votre annonce?"><button class="btn btn-secondary" type="button">Valider</button><input class="form-control" type="text" placeholder="nom"><input class="form-control" type="text"
-                                                                                                                                                                                                                                                        placeholder="prénom"><input class="form-control" type="text" placeholder="titre"><input class="form-control" type="email" placeholder="email"><input class="form-control" type="tel" placeholder="téléphone"><input class="form-control"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            type="text" placeholder="caméra"><input class="form-control" type="number" placeholder="tarif / jour"><button class="btn btn-secondary" type="button">Valider</button></form>
+                    {% include 'form/cameraform.html.twig' %}
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Camera;
 use App\Form\CameraType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -65,10 +66,16 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/modifieruneannonce", name="modifieruneannonce")
+     * @Route("/modifieruneannonce/{id}", name="modifieruneannonce")
      */
-    public function modifieruneannonce()
+    public function modifieruneannonce(Camera $camera, EntityManagerInterface $manager, Request $request)
     {
-        return $this->render('modifieruneannonce.html.twig');
+        $form = $this->createForm(CameraType::class, $camera);
+        $form->handleRequest($request);
+
+        return $this->render('modifieruneannonce.html.twig', [
+            'camera' => $camera,
+            'form'   => $form->createView(),
+        ]);
     }
 }

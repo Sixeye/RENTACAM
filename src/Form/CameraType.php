@@ -25,7 +25,7 @@ class CameraType extends AbstractType
             ->add('Telephone', TelType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Téléphone']])
             ->add('Brand', TextType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Caméra']])
             ->add('Prix', IntegerType::class, ['attr' => ['class'=>'form-control', 'placeholder'=>'Votre Tarif / Jour']])
-            ->add('ajouter', SubmitType::class, ['attr' => ['class'=>'btn btn-secondary', 'type' => 'button']])
+            ->add('valider', SubmitType::class, ['attr' => ['class'=>'btn btn-secondary', 'type' => 'button']])
         ;
     }
 

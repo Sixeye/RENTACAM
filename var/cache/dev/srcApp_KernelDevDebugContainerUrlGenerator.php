@@ -36,7 +36,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'cameraalouer' => [[], ['_controller' => 'App\\Controller\\IndexController::cameraalouer'], [], [['text', '/cameraalouer']], [], []],
         'lesloueurs' => [[], ['_controller' => 'App\\Controller\\IndexController::lesloueurs'], [], [['text', '/lesloueurs']], [], []],
         'mettreunecameralocation' => [[], ['_controller' => 'App\\Controller\\IndexController::mettreunecameralocation'], [], [['text', '/mettreunecameralocation']], [], []],
-        'modifieruneannonce' => [[], ['_controller' => 'App\\Controller\\IndexController::modifieruneannonce'], [], [['text', '/modifieruneannonce']], [], []],
+        'modifieruneannonce' => [['id'], ['_controller' => 'App\\Controller\\IndexController::modifieruneannonce'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/modifieruneannonce']], [], []],
     ];
         }
     }
