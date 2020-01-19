@@ -15,17 +15,13 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
-        ),
-        'Z' => 
-        array (
-            'Zend\\EventManager\\' => 18,
-            'Zend\\Code\\' => 10,
         ),
         'W' => 
         array (
@@ -61,6 +57,8 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Mime\\' => 23,
+            'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 41,
+            'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -109,6 +107,12 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
         array (
             'Monolog\\' => 8,
         ),
+        'L' => 
+        array (
+            'Laminas\\ZendFrameworkBridge\\' => 28,
+            'Laminas\\EventManager\\' => 21,
+            'Laminas\\Code\\' => 13,
+        ),
         'F' => 
         array (
             'Fig\\Link\\' => 9,
@@ -147,14 +151,6 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-        ),
-        'Zend\\EventManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
-        ),
-        'Zend\\Code\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -259,6 +255,14 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
         'Symfony\\Component\\Mime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
+        ),
+        'Symfony\\Component\\Mailer\\Bridge\\Sendgrid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/sendgrid-mailer',
+        ),
+        'Symfony\\Component\\Mailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/mailer',
         ),
         'Symfony\\Component\\Intl\\' => 
         array (
@@ -423,6 +427,18 @@ class ComposerStaticInit3984ed27f5b4558e0a89bf5b8750c35e
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Laminas\\ZendFrameworkBridge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
+        ),
+        'Laminas\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-eventmanager/src',
+        ),
+        'Laminas\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
         'Fig\\Link\\' => 
         array (
