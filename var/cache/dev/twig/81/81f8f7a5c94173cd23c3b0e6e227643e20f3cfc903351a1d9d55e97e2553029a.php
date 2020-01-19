@@ -94,6 +94,7 @@ class __TwigTemplate_b0462e1d63d53a821cb1e12b05de3318e08709c6ff89fe4ea3200cc861c
     text-align: left;
     text-transform: none;
     z-index: 99999;
+    direction: ltr;
 
     /* neutralize the aliasing defined by external CSS styles */
     -webkit-font-smoothing: subpixel-antialiased;
@@ -247,41 +248,41 @@ div.sf-toolbar .sf-toolbar-block a:hover {
 
 .sf-toolbar-block .sf-toolbar-status-green {
     background-color: ";
-        // line 209
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 209, $this->source); })()), "success", [], "any", false, false, false, 209);
+        // line 210
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 210, $this->source); })()), "success", [], "any", false, false, false, 210);
         echo ";
 }
 .sf-toolbar-block .sf-toolbar-status-red {
     background-color: ";
-        // line 212
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 212, $this->source); })()), "error", [], "any", false, false, false, 212);
+        // line 213
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 213, $this->source); })()), "error", [], "any", false, false, false, 213);
         echo ";
 }
 .sf-toolbar-block .sf-toolbar-status-yellow {
     background-color: ";
-        // line 215
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 215, $this->source); })()), "warning", [], "any", false, false, false, 215);
+        // line 216
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 216, $this->source); })()), "warning", [], "any", false, false, false, 216);
         echo ";
 }
 
 .sf-toolbar-block.sf-toolbar-status-green {
     background-color: ";
-        // line 219
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 219, $this->source); })()), "success", [], "any", false, false, false, 219);
+        // line 220
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 220, $this->source); })()), "success", [], "any", false, false, false, 220);
         echo ";
     color: #FFF;
 }
 .sf-toolbar-block.sf-toolbar-status-red {
     background-color: ";
-        // line 223
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 223, $this->source); })()), "error", [], "any", false, false, false, 223);
+        // line 224
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 224, $this->source); })()), "error", [], "any", false, false, false, 224);
         echo ";
     color: #FFF;
 }
 .sf-toolbar-block.sf-toolbar-status-yellow {
     background-color: ";
-        // line 227
-        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 227, $this->source); })()), "warning", [], "any", false, false, false, 227);
+        // line 228
+        echo twig_get_attribute($this->env, $this->source, (isset($context["colors"]) || array_key_exists("colors", $context) ? $context["colors"] : (function () { throw new RuntimeError('Variable "colors" does not exist.', 228, $this->source); })()), "warning", [], "any", false, false, false, 228);
         echo ";
     color: #FFF;
 }
@@ -622,7 +623,7 @@ div.sf-toolbar .sf-toolbar-block a:hover {
 
     public function getDebugInfo()
     {
-        return array (  284 => 227,  277 => 223,  270 => 219,  263 => 215,  257 => 212,  251 => 209,  43 => 3,  41 => 2,);
+        return array (  285 => 228,  278 => 224,  271 => 220,  264 => 216,  258 => 213,  252 => 210,  43 => 3,  41 => 2,);
     }
 
     public function getSourceContext()
@@ -683,6 +684,7 @@ div.sf-toolbar .sf-toolbar-block a:hover {
     text-align: left;
     text-transform: none;
     z-index: 99999;
+    direction: ltr;
 
     /* neutralize the aliasing defined by external CSS styles */
     -webkit-font-smoothing: subpixel-antialiased;

@@ -28,14 +28,13 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
     private $createCacheItem;
 
     /**
-     * @param int  $defaultLifetime
      * @param bool $storeSerialized Disabling serialization can lead to cache corruptions when storing mutable values but increases performance otherwise
      */
     public function __construct(int $defaultLifetime = 0, bool $storeSerialized = true)
     {
         $this->storeSerialized = $storeSerialized;
         $this->createCacheItem = \Closure::bind(
-            function ($key, $value, $isHit) use ($defaultLifetime) {
+            static function ($key, $value, $isHit) use ($defaultLifetime) {
                 $item = new CacheItem();
                 $item->key = $key;
                 $item->value = $value;
@@ -59,7 +58,8 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
 
         // ArrayAdapter works in memory, we don't care about stampede protection
         if (INF === $beta || !$item->isHit()) {
-            $this->save($item->set($callback($item)));
+            $save = true;
+            $this->save($item->set($callback($item, $save)));
         }
 
         return $item->get();
@@ -96,6 +96,8 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function deleteItems(array $keys)
     {
@@ -108,6 +110,8 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function save(CacheItemInterface $item)
     {
@@ -139,6 +143,8 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function saveDeferred(CacheItemInterface $item)
     {
@@ -147,6 +153,8 @@ class ArrayAdapter implements AdapterInterface, CacheInterface, LoggerAwareInter
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function commit()
     {

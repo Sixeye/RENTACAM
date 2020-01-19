@@ -40,9 +40,12 @@ class IndexController extends AbstractController
     /**
      * @Route("/lesloueurs", name="lesloueurs")
      */
-    public function lesloueurs()
+    public function lesloueurs(CameraRepository $cameraRepository)
     {
-        return $this->render('les_loueurs.html.twig');
+        $cameras = $cameraRepository->findAll();
+        return $this->render('les_loueurs.html.twig', [
+            'cameras' => $cameras
+        ]);
     }
 
     /**

@@ -80,12 +80,25 @@ class Logger extends BaseLogger implements DebugLoggerInterface, ResetInterface
         }
     }
 
+    public function removeDebugLogger()
+    {
+        foreach ($this->processors as $k => $processor) {
+            if ($processor instanceof DebugLoggerInterface) {
+                unset($this->processors[$k]);
+            }
+        }
+
+        foreach ($this->handlers as $k => $handler) {
+            if ($handler instanceof DebugLoggerInterface) {
+                unset($this->handlers[$k]);
+            }
+        }
+    }
+
     /**
      * Returns a DebugLoggerInterface instance if one is registered with this logger.
-     *
-     * @return DebugLoggerInterface|null A DebugLoggerInterface instance or null if none is registered
      */
-    private function getDebugLogger()
+    private function getDebugLogger(): ?DebugLoggerInterface
     {
         foreach ($this->processors as $processor) {
             if ($processor instanceof DebugLoggerInterface) {
@@ -98,5 +111,7 @@ class Logger extends BaseLogger implements DebugLoggerInterface, ResetInterface
                 return $handler;
             }
         }
+
+        return null;
     }
 }

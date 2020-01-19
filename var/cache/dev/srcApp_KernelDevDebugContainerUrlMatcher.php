@@ -1,6 +1,6 @@
 <?php
 
-use Symfony\Component\Routing\Matcher\Dumper\PhpMatcherTrait;
+use Symfony\Component\Routing\Matcher\Dumper\CompiledUrlMatcherTrait;
 use Symfony\Component\Routing\RequestContext;
 
 /**
@@ -9,7 +9,7 @@ use Symfony\Component\Routing\RequestContext;
  */
 class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher
 {
-    use PhpMatcherTrait;
+    use CompiledUrlMatcherTrait;
 
     public function __construct(RequestContext $context)
     {
@@ -53,7 +53,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            197 => [[['_route' => 'modifieruneannonce', '_controller' => 'App\\Controller\\IndexController::modifieruneannonce'], ['id'], null, null, false, true, null]],
+            197 => [
+                [['_route' => 'modifieruneannonce', '_controller' => 'App\\Controller\\IndexController::modifieruneannonce'], ['id'], null, null, false, true, null],
+                [null, null, null, null, false, false, 0],
+            ],
         ];
     }
 }

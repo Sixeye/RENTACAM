@@ -30,7 +30,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 abstract class ConstraintValidatorTestCase extends TestCase
 {
-    use TestCaseSetUpTearDownTrait;
+    use ForwardCompatTestTrait;
 
     /**
      * @var ExecutionContextInterface
@@ -99,6 +99,7 @@ abstract class ConstraintValidatorTestCase extends TestCase
     protected function createContext()
     {
         $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+        $translator->expects($this->any())->method('trans')->willReturnArgument(0);
         $validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
         $contextualValidator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
 
@@ -110,7 +111,7 @@ abstract class ConstraintValidatorTestCase extends TestCase
         $validator->expects($this->any())
             ->method('inContext')
             ->with($context)
-            ->will($this->returnValue($contextualValidator));
+            ->willReturn($contextualValidator);
 
         return $context;
     }
@@ -175,10 +176,11 @@ abstract class ConstraintValidatorTestCase extends TestCase
         $validator->expects($this->at(2 * $i))
             ->method('atPath')
             ->with($propertyPath)
-            ->will($this->returnValue($validator));
+            ->willReturn($validator);
         $validator->expects($this->at(2 * $i + 1))
             ->method('validate')
-            ->with($value, $this->logicalOr(null, [], $this->isInstanceOf('\Symfony\Component\Validator\Constraints\Valid')), $group);
+            ->with($value, $this->logicalOr(null, [], $this->isInstanceOf('\Symfony\Component\Validator\Constraints\Valid')), $group)
+            ->willReturn($validator);
     }
 
     protected function expectValidateValueAt($i, $propertyPath, $value, $constraints, $group = null)
@@ -187,10 +189,11 @@ abstract class ConstraintValidatorTestCase extends TestCase
         $contextualValidator->expects($this->at(2 * $i))
             ->method('atPath')
             ->with($propertyPath)
-            ->will($this->returnValue($contextualValidator));
+            ->willReturn($contextualValidator);
         $contextualValidator->expects($this->at(2 * $i + 1))
             ->method('validate')
-            ->with($value, $constraints, $group);
+            ->with($value, $constraints, $group)
+            ->willReturn($contextualValidator);
     }
 
     protected function assertNoViolation()
@@ -235,7 +238,7 @@ class ConstraintViolationAssertion
     private $constraint;
     private $cause;
 
-    public function __construct(ExecutionContextInterface $context, $message, Constraint $constraint = null, array $assertions = [])
+    public function __construct(ExecutionContextInterface $context, string $message, Constraint $constraint = null, array $assertions = [])
     {
         $this->context = $context;
         $this->message = $message;
@@ -243,14 +246,14 @@ class ConstraintViolationAssertion
         $this->assertions = $assertions;
     }
 
-    public function atPath($path)
+    public function atPath(string $path)
     {
         $this->propertyPath = $path;
 
         return $this;
     }
 
-    public function setParameter($key, $value)
+    public function setParameter(string $key, $value)
     {
         $this->parameters[$key] = $value;
 
@@ -278,14 +281,14 @@ class ConstraintViolationAssertion
         return $this;
     }
 
-    public function setPlural($number)
+    public function setPlural(int $number)
     {
         $this->plural = $number;
 
         return $this;
     }
 
-    public function setCode($code)
+    public function setCode(string $code)
     {
         $this->code = $code;
 
@@ -299,7 +302,7 @@ class ConstraintViolationAssertion
         return $this;
     }
 
-    public function buildNextViolation($message)
+    public function buildNextViolation(string $message): self
     {
         $assertions = $this->assertions;
         $assertions[] = $this;
@@ -327,10 +330,10 @@ class ConstraintViolationAssertion
         }
     }
 
-    private function getViolation()
+    private function getViolation(): ConstraintViolation
     {
         return new ConstraintViolation(
-            null,
+            $this->message,
             $this->message,
             $this->parameters,
             $this->context->getRoot(),

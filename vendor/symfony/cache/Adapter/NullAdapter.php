@@ -42,7 +42,9 @@ class NullAdapter implements AdapterInterface, CacheInterface
      */
     public function get(string $key, callable $callback, float $beta = null, array &$metadata = null)
     {
-        return $callback(($this->createCacheItem)($key));
+        $save = true;
+
+        return $callback(($this->createCacheItem)($key), $save);
     }
 
     /**
@@ -65,6 +67,8 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function hasItem($key)
     {
@@ -73,14 +77,20 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @param string $prefix
+     *
+     * @return bool
      */
-    public function clear()
+    public function clear(/*string $prefix = ''*/)
     {
         return true;
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function deleteItem($key)
     {
@@ -89,6 +99,8 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function deleteItems(array $keys)
     {
@@ -97,6 +109,8 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function save(CacheItemInterface $item)
     {
@@ -105,6 +119,8 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function saveDeferred(CacheItemInterface $item)
     {
@@ -113,6 +129,8 @@ class NullAdapter implements AdapterInterface, CacheInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @return bool
      */
     public function commit()
     {
